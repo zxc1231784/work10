@@ -1,0 +1,47 @@
+package java10_2;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class java10_2 {
+
+	public static void main(String[] args) {
+		File in = new File("C:\\Sample.txt");
+
+		String s = null;
+		int mmm = 0, yyy = 0, n = 0, xxx = 0;
+		char[] ca = new char[1];
+
+		try (FileInputStream fis = new FileInputStream(in);
+				FileReader frs = new FileReader(in);
+				FileReader frs1 = new FileReader(in);
+				BufferedReader rrs = new BufferedReader(frs1);)
+
+		{
+			while ((n = fis.read()) != -1) {
+				xxx++;
+			}
+
+			while ((n = frs.read()) != -1) {
+				yyy++;
+			}
+
+			while ((s = rrs.readLine()) != null) {
+				mmm++;
+
+			}
+
+		} catch (FileNotFoundException e) {
+
+		} catch (IOException e) {
+
+		}
+		System.out.println(xxx + "個位元組," + yyy + "個字元," + mmm + "列資料");
+
+	}
+
+}
