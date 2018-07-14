@@ -1,0 +1,13 @@
+package java10_1;
+
+import java.io.File;
+
+public class java10_1 {
+
+	public static void main(String[] args) {
+		File in = new File("C:\\lab.sql");
+		System.out.println(in.length()+"位元組");
+
+	}
+
+}
